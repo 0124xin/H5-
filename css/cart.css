@@ -1,0 +1,137 @@
+body{
+    background: #f4f4f4;
+}
+input[type="checkbox"]{
+    appearance: none;
+    width: 15px;
+    height: 15px;
+}
+.cart input{
+    text-align: center;
+}
+.title span.amount,.title span.subtotal{
+    color: #0aa1ed;
+}
+.title{
+    font-size: 12px;
+    color: #666;
+}
+.title p{
+    padding-top: 13px;
+}
+.title p span:nth-child(2){
+    margin: 0 10px;
+}
+.cart-top{
+    border-top: 1px solid #bbb;
+    background: #cfcbcb;
+    box-shadow: #e4e1e1;
+    height: 40px;
+    padding-top: 5px;
+}
+.cart-top ul li{
+    font-size: 12px;
+    color: #666;
+}
+.cart-top ul li:nth-child(1){
+    margin-left: 5px;
+}
+.cart-top ul li:nth-child(2){
+    margin-left: 70px;
+}
+.cart-top ul li:nth-child(3){
+    margin-left: 420px;
+}
+.cart-top ul li:nth-child(4){
+    margin-left: 110px;
+}
+.cart-top ul li:nth-child(5){
+    margin-left: 120px;
+}
+.cart-top ul li:nth-child(6){
+    margin-left: 110px;
+}
+.cart-item{
+    border: 1px solid rgba(0 ,0,0,0.1);
+    position: relative;
+    margin-top: 10px;
+    background: #fff;
+}
+.cart-item:hover{
+    background: #e4e6e7;
+}
+.cart-item>div{
+    float: left;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);  
+    height: 100px;
+}
+.cart-item .check{
+    width: 20px;
+    height: 100px;
+    text-align: center;
+    padding-top: 35px;
+    border-right: none;
+}
+.cart-item .pudc{
+    width: 508px;
+}
+.cart-item .pudc img{
+    float: left;
+    vertical-align: middle;
+}
+.cart-item .pudc .product-name{
+    padding-top: 23px;
+    color: #959595;
+    font-size: 12px;
+    margin: 8px 0;
+}
+.cart-item .pudc .product-intro{
+    color: #959595;
+    font-size: 12px;
+}
+.cart-item .price,.cart-item .subtotal{
+    width: 160px;
+    text-align: center;
+    padding-top: 40px;
+    font-size: 12px;
+    color: #666;
+}
+
+.cart-item .num{
+    width: 160px; 
+    padding-top: 36px;
+    text-align: center;
+}
+.cart-item .num span{
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+.cart-item .num input{
+    width: 20px;
+    height: 20px;
+}
+.cart-item .subtotal{
+    width: 160px;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+}
+.cart-item .del{
+    width: 130px;
+    padding-top: 40px;
+    padding-left: 7px;
+    padding-right: 7px;
+    font-size: 12px;
+    text-align: center;
+}
+.submit button{
+    background: #0aa1ed;
+    margin-top: 10px;
+    color: #fff;
+}

@@ -9,7 +9,7 @@
     line-height: 2;
     border-radius: 19px;
     border: 1px solid gray;
-   cursor: pointer;
+    cursor: pointer;
 }
 .login span:nth-child(3):hover,.login span:nth-child(4):hover{
    background:rgba(43, 35, 35, 0.1)

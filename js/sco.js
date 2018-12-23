@@ -1,62 +1,72 @@
-window.addEventListener("load",setTimer,false);
-let p;
-let button;
-function setTimer(){
-  p=document.getElementsByClassName('img-g')[0];
-  button=document.querySelectorAll('.button-g span');
-  for(let i=0;i<button.length;i++){
-    button[i].style.backgroundColor='#eee';
-    button[i].onclick=function(){
-      p.style.left=-450*this.getAttribute('data-index')+'px'
-      tog(this.getAttribute('data-index'))
-      clearInterval(window.timer)
-      window.timer=setInterval(move,3000);
-    }
-  
-  }
-  
-  function tog(index){
-    if(index>3){tog(0);return;}
-    for(let i=0;i<button.length;i++){
-      button[i].style.backgroundColor='#eee'
-    }
-    button[index].style.backgroundColor='rgb(215, 81, 15)';
-  }
-  p.onmouseover=function(){
-    clearInterval(window.timer)
-  }
-  p.onmouseout=function(){
-    window.timer=setInterval(move,3000);
-  }
-  window.timer=setInterval(move,3000);
-}
+ /*
+        1.动态生成ol
+        2.鼠标悬浮时显示arrow，鼠标离开时隐藏
+        3.点击li是移动图片
+        4.上一张，下一张
+        5.无缝滚动
+        */
+        /*
+        动态生成ol
+        */
+       $(function () {
+        var time//定时器
+        var $parent = $(".box");//banner父元素box
+        var $ul = $parent.find('.screen ul');
+        var $ol = $parent.find('.screen ol');
+        var $arrow = $parent.find('.arrow')
+        var count = $ul.children().length;
+        var imgWidth = $ul.children(':first').width();
+        var index = 0;
+        for (var i = 0; i < count; i++) {
+            $ol.append('<li>' + (i + 1) + '</li>')
+        }
+        $ol.children(':first').addClass('current');
+        $ul.append($ul.children(':first').clone(true))
+        $ul.css("width",imgWidth*(count+1));
+        $parent.mouseover(function () {
+            $arrow.show()
+        })
+        $('ol li').each(function () {
+            $(this).click(function () {
+                window.clearInterval(time);
+                index = $(this).index();
+                console.log(index)
+                $ul.stop().animate({
+                    left: -index * imgWidth
+                })
+                $(this).addClass('current').siblings().removeClass('current');
+                time = setInterval(() => {
+          $arrow.children(':last').trigger('click') 
+       }, 8000);
+            })
+        })
+        $arrow.children(':last').click(function(){
+            index++;
+            if(index<count)
+                $ol.children().eq(index).trigger('click');
+            else{
+                $ul.stop().animate({left:-index*imgWidth},function(){
+                    $ol.children(':first').addClass('current').siblings().removeClass('current')
+                    index = 0;
+                    $ul.css("left",0);
+                })
+            }
+        })
+        $arrow.children(':first').click(function(){
+            index--;
+            if(index>=0)
+                $ol.children().eq(index).trigger('click');
+            else{
+                $ul.css("left",-count*imgWidth)
+                alert(count)
+                index = count-1;
+                $ol.children().eq(index).trigger('click');
+            }
+        })
+        time = setInterval(() => {
+          $arrow.children(':last').trigger('click') 
+       }, 8000);
 
-function move(){
-  if(parseInt(p.style.left)>-1800){
-    p.style.left=parseInt(p.style.left)-450+'px'
-    p.style.transition='left 1s';
-    tog(-Math.round(parseInt(p.style.left)/450))
-    if(parseInt(p.style.left)<=-1800){
-        setTimeout(function(){
-          tog(0)
-          p.style.left='0px'
-          p.style.transition='left 0s';
-        },1000)
-    }
-  }else{
-    p.style.left='0px'
-    p.style.transition='left 0s';
-  }
-}
 
-
-
-function tog(index){
-  if(index>3){tog(0);return;}
-  for(let i=0;i<button.length;i++){
-    button[i].style.backgroundColor='#eee'
-  }
-  button[index].style.backgroundColor='rgb(215, 81, 15)';
-}
-
+    })
 

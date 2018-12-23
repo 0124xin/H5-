@@ -14,9 +14,25 @@
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/head.js"></script>
     <script src="../js/index.js"></script>
+    <script src="../js/sco.js"></script>
+    <script>
+        $(function(){
+            var $item = $(".list-item");
+            $item.mouseover(function(){
+                $(this).css("border","1px solid red")
+                $(this).stop().animate({bottom:"10px"})
+                $(this).parent().find(".similar").show();
+            })
+            $item.mouseout(function(){
+                $(this).css("border","none")
+                $(this).stop().animate({bottom:"0px"})
+                $(this).parent().find(".similar").hide();
+            })
+        })
+    </script>
 </head>
 
-<body>
+<body  data-spy="scroll" data-target="#myScrollspy" data-offset="20">
     <div class="container-fluid">
         <div class="col-md-1 pull-left logo">
             <img src="../images/logo/3.png" alt="">
@@ -68,7 +84,7 @@
             </div>
         </nav>
     </div>
-    <div class="container">
+    <div class="container" id="section-one">
         <div class="col-md-2">
             <div class="slider">
                 <ul class="list-unstyled">
@@ -85,9 +101,7 @@
                     <li><a href="">机票 </a>/ <a href="">旅游</a>/ <a href="">酒店</a>/ <a href="">生活</a> </li>
                     <li><a href="">机票 </a>/ <a href="">旅游</a>/ <a href="">酒店</a>/ <a href="">生活</a> </li>
                     <li><a href="">机票 </a>/ <a href="">旅游</a>/ <a href="">酒店</a>/ <a href="">生活</a> </li>
-                    <li><a href="">机票 </a>/ <a href="">旅游</a>/ <a href="">酒店</a>/ <a href="">生活</a> </li>
-                    <li><a href="">机票 </a>/ <a href="">旅游</a>/ <a href="">酒店</a>/ <a href="">生活</a> </li>
-                    <li><a href="">机票 </a>/ <a href="">旅游</a>/ <a href="">酒店</a>/ <a href="">生活</a> </li>
+                    
                 </ul>
             </div>
         </div>
@@ -148,76 +162,152 @@
                     <dd><a href="">曲面电视</a>|<a href="">超薄电视</a>|<a href="">OLED电视</a>|<a href="">4K高清电视</a>|<a href="">55英寸</a>|<a
                             href="">65英寸</a></dd>
                 </dl>
-                <dl class="item_one">
-                    <dt class="pull-left">电视></dt>
-                    <dd><a href="">曲面电视</a>|<a href="">超薄电视</a>|<a href="">OLED电视</a>|<a href="">4K高清电视</a>|<a href="">55英寸</a>|<a
-                            href="">65英寸</a></dd>
-                </dl>
-                <dl class="item_one">
-                    <dt class="pull-left">电视></dt>
-                    <dd><a href="">曲面电视</a>|<a href="">超薄电视</a>|<a href="">OLED电视</a>|<a href="">4K高清电视</a>|<a href="">55英寸</a>|<a
-                            href="">65英寸</a></dd>
-                </dl>
-                <dl class="item_one">
-                    <dt class="pull-left">电视></dt>
-                    <dd><a href="">曲面电视</a>|<a href="">超薄电视</a>|<a href="">OLED电视</a>|<a href="">4K高清电视</a>|<a href="">55英寸</a>|<a
-                            href="">65英寸</a></dd>
-                </dl>
             </div>
-            <div class="col-xs-10">
-                <div class="col-xs-10">
+            <div class="col-md-10">
+                <div class="col-xs-8">
                     <div class="banner">
-                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                            <!-- Indicators -->
-                            <ol class="carousel-indicators">
-                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                            </ol>
+                        <div class="box" id="box">
+                            <div class="screen">
+                                <ul>
+                                    <li><img src="../images/index/banner/1.jpg" alt=""></li>
+                                    <li><img src="../images/index/banner/2.jpg" alt=""></li>
+                                    <li><img src="../images/index/banner/3jpg.jpg" alt=""></li>
+                                    <li><img src="../images/index/banner/2.jpg" alt=""></li>
+                                    
+                                </ul>
+                                <ol>
 
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner" role="listbox">
-                                <div class="item active">
-                                    <img src="../images/index/banner/1.jpg">
-                                    <div class="carousel-caption">
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <img src="../images/index/banner/2.jpg">
-                                    <div class="carousel-caption">
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <img src="../images/index/banner/3jpg.jpg">
-                                    <div class="carousel-caption">
-                                    </div>
-                                </div>
+                                </ol>
                             </div>
-                            <!-- Controls -->
-                            <a class="left " href="#carousel-example-generic" role="button" data-slide="prev" id="prev">
-                                < <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="right " href="#carousel-example-generic" role="button" data-slide="next" id="next">
-                                >
-                                <span class="sr-only">Next</span>
-                            </a>
+                            <div class="arrow"><span><</span><span>></span> </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-2">
                     <div class="slider-right">
+                        <div class="slider-top text-center">
+                            <img src="../images/index/icon/no_login.jpg" alt="">
+                            <p>hi!欢迎来到我们的商城</p>
+                            <span>登录 注册</span>
+                            <div>
+                                <span><button class="btn btn-info btn-sm">新人福利</button>
+                                    <button class="btn btn-default btn-sm">PLUS会员</button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="slider-tab">
+                            <ul id="myTab" class="nav nav-tabs">
+                                <li class="active">
+                                    <a href="#home" data-toggle="tab">
+                                        公告
+                                    </a>
+                                </li>
+                                <li><a href="#ios" data-toggle="tab">规则</a></li>
+                                <li><a href="" data-toggle="tab">论坛</a></li>
+                                <li><a href="" data-toggle="tab">安全</a></li>
 
-                        <div class="col-xs-12">
-                            <img src="../images/index/1.jpg" alt="">
-                            <img src="../images/index/1.jpg" alt="">
-                            <img src="../images/index/1.jpg" alt="">
+                                <li class="dropdown">
+                                    <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown">更多
+                                        <b class="caret"></b>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+                                        <li><a href="#jmeter" tabindex="-1" data-toggle="tab">jmeter</a></li>
+                                        <li><a href="#ejb" tabindex="-1" data-toggle="tab">ejb</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div id="myTabContent" class="tab-content">
+                                <div class="tab-pane fade in active" id="home">
+                                    <ul class="list-unstyled">
+                                        <li><a href="">上海农委奖励阿里助农 单日助销农产品最高超50亿元</a></li>
+                                        <li><a href="">上海农委奖励阿里助农 单日助销农产品最高超50亿元</a></li>
+                                        <li><a href="">进口海鲜比30年前还便宜，新零售突显改革开放红利</a></li>
+                                    </ul>
+                                </div>
+                                <div class="tab-pane fade" id="ios">
+                                    <ul class="list-unstyled">
+                                        <li><a href="">新增《淘宝网抽检标准（商用厨房电器）》公示通知</a></li>
+                                        <li><a href="">新增《淘宝网抽检标准（商用厨房电器）》公示通知</a></li>
+                                        <li><a href="">新增《淘宝网抽检标准（商用厨房电器）》公示通知</a></li>
+                                       
+                                    </ul>
+                                </div>
+                                <div class="tab-pane fade" id="jmeter">
+                                    <p>jMeter 是一款开源的测试软件。它是 100% 纯 Java 应用程序，用于负载和性能测试。</p>
+                                </div>
+                                <div class="tab-pane fade" id="ejb">
+                                    <p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web
+                                        Logic 等）的 J2EE 上。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-bottom">
+                            <ul class="list-unstyled list-inline text-center">
+                                <li><img src="../images/index/icon/充话费.png" alt=""><span class="clearfix">充话费</span></li>
+                                <li><img src="../images/index/icon/旅行.png" alt=""><span class="clearfix">旅行</span></li>
+                                <li><img src="../images/index/icon/money.png" alt=""><span class="clearfix">理财</span></li>
+                                <li><img src="../images/index/icon/彩票.png" alt=""><span class="clearfix">彩票</span></li>
+                                <li><img src="../images/index/icon/电影.png" alt=""><span class="clearfix">电影</span></li>
+                                <li><img src="../images/index/icon/游戏.png" alt=""><span class="clearfix">游戏</span></li>
+                                <li><img src="../images/index/icon/演出.png" alt=""><span class="clearfix">演出</span></li>
+                                <li><img src="../images/index/icon/火车票.png" alt=""><span class="clearfix">火车票</span></li>
+                                <li><img src="../images/index/icon/找服务.png" alt=""><span class="clearfix">找服务</span></li>
+                                <li><img src="../images/index/icon/车险.png" alt=""><span class="clearfix">车险</span></li>
+                                <li><img src="../images/index/icon/煤气.png" alt=""><span class="clearfix">煤气</span></li>
+                                <li><img src="../images/index/icon/水电.png" alt=""><span class="clearfix">水电</span></li>
+
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
-    <div class="container">
+    <div class="container" id="section-two">
+        <div class="life-search">
+            <h4>生活研究所<span>发现属于你的生活方式</span></h4>
+            <div class="life-item">
+                <img src="../images/index/life-search/高跟鞋.png" alt="">
+                <p>女神范</p>
+                <p><span>就是要你好看</span></p>
+                <p><img src="../images/index/life-search/心 爱心-111.png" alt=""><span class="popular">人气635342</span></p>
+            </div>
+            <div class="life-item">
+                <img src="../images/index/life-search/家居.png" alt="">
+                <p>中式家装控</p>
+                <p><span>为爸妈筑新家</span></p>
+                <p><img src="../images/index/life-search/心 爱心-111.png" alt=""><span class="popular">人气635342</span></p>
+            </div>
+            <div class="life-item">
+                <img src="../images/index/life-search/网球.png" alt="">
+                <p>网球小子</p>
+                <p><span>享受击球瞬间</span></p>
+                <p><img src="../images/index/life-search/心 爱心-111.png" alt=""><span class="popular">人气635342</span></p>
+            </div>
+            <div class="life-item">
+                <img src="../images/index/life-search/嘻哈童装.png" alt="">
+                <p>嘻哈一族</p>
+                <p><span>你有freestyle吗</span></p>
+                <p><img src="../images/index/life-search/心 爱心-111.png" alt=""><span class="popular">人气635342</span></p>
+            </div>
+            <div class="life-item">
+                <img src="../images/index/life-search/养生.png" alt="">
+                <p>理想家</p>
+                <p><span>想要这个家</span></p>
+                <p><img src="../images/index/life-search/心 爱心-111.png" alt=""><span class="popular">人气635342</span></p>
+            </div>
+            <div class="life-item">
+                <img src="../images/index/life-search/家.png" alt="">
+                <p>女神范</p>
+                <p><span>就是要你好看</span></p>
+                <p><img src="../images/index/life-search/心 爱心-111.png" alt=""><span class="popular">人气635342</span></p>
+            </div>
+            
+        </div>
+    </div>
+    <div class="container" id="section-three">
         <div class="sk">
             <div class="col-md-2">
                 <div class="sk_left">
@@ -386,7 +476,7 @@
             </div>
         </div>
     </div>
-    <div class="hot-product">
+    <div class="hot-product" id="section-four">
         <div class="container">
             <h4>热门推荐</h4>
             <div class="col-md-3">
@@ -519,6 +609,107 @@
             </div>
         </div>
     </div>
+    <div class="container">
+        <div class="layer">
+            <h3 style="padding:5px;color:rgb(12, 184, 84)">猜你喜欢</h3>
+            <div class="col-md-3">
+                <div class="list-item">
+                    <img src="../images/index/likes/1.jpg" alt="">
+                    <p class="desc">江南素兮秋冬季新款改良汉服中国风绣花半身长裙女装-沾露</p>
+                    <span class="price">$129</span>
+                    <span class="xl">销量:89</span>
+                </div>
+                <div class="similar text-center">
+                    <p> <img src="../images/index/icon/爱心.png" alt=""> 找相似</p>
+                    <p>发现更多相似的宝贝</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="list-item">
+                    <img src="../images/index/likes/1.jpg" alt="">
+                    <p class="desc">江南素兮秋冬季新款改良汉服中国风绣花半身长裙女装-沾露</p>
+                    <span class="price">$129</span>
+                    <span class="xl">销量:89</span>
+                </div>
+                <div class="similar text-center">
+                    <p> <img src="../images/index/icon/爱心.png" alt=""> 找相似</p>
+                    <p>发现更多相似的宝贝</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="list-item">
+                    <img src="../images/index/likes/1.jpg" alt="">
+                    <p class="desc">江南素兮秋冬季新款改良汉服中国风绣花半身长裙女装-沾露</p>
+                    <span class="price">$129</span>
+                    <span class="xl">销量:89</span>
+                </div>
+                <div class="similar text-center">
+                    <p> <img src="../images/index/icon/爱心.png" alt=""> 找相似</p>
+                    <p>发现更多相似的宝贝</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="list-item">
+                    <img src="../images/index/likes/1.jpg" alt="">
+                    <p class="desc">江南素兮秋冬季新款改良汉服中国风绣花半身长裙女装-沾露</p>
+                    <span class="price">$129</span>
+                    <span class="xl">销量:89</span>
+                </div>
+                <div class="similar text-center">
+                    <p> <img src="../images/index/icon/爱心.png" alt=""> 找相似</p>
+                    <p>发现更多相似的宝贝</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="list-item">
+                    <img src="../images/index/likes/1.jpg" alt="">
+                    <p class="desc">江南素兮秋冬季新款改良汉服中国风绣花半身长裙女装-沾露</p>
+                    <span class="price">$129</span>
+                    <span class="xl">销量:89</span>
+                </div>
+                <div class="similar text-center">
+                    <p> <img src="../images/index/icon/爱心.png" alt=""> 找相似</p>
+                    <p>发现更多相似的宝贝</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="list-item">
+                    <img src="../images/index/likes/1.jpg" alt="">
+                    <p class="desc">江南素兮秋冬季新款改良汉服中国风绣花半身长裙女装-沾露</p>
+                    <span class="price">$129</span>
+                    <span class="xl">销量:89</span>
+                </div>
+                <div class="similar text-center">
+                    <p> <img src="../images/index/icon/爱心.png" alt=""> 找相似</p>
+                    <p>发现更多相似的宝贝</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="list-item">
+                    <img src="../images/index/likes/1.jpg" alt="">
+                    <p class="desc">江南素兮秋冬季新款改良汉服中国风绣花半身长裙女装-沾露</p>
+                    <span class="price">$129</span>
+                    <span class="xl">销量:89</span>
+                </div>
+                <div class="similar text-center">
+                    <p> <img src="../images/index/icon/爱心.png" alt=""> 找相似</p>
+                    <p>发现更多相似的宝贝</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="list-item">
+                    <img src="../images/index/likes/1.jpg" alt="">
+                    <p class="desc">江南素兮秋冬季新款改良汉服中国风绣花半身长裙女装-沾露</p>
+                    <span class="price">$129</span>
+                    <span class="xl">销量:89</span>
+                </div>
+                <div class="similar text-center">
+                    <p> <img src="../images/index/icon/爱心.png" alt=""> 找相似</p>
+                    <p>发现更多相似的宝贝</p>
+                </div>
+            </div>   
+    </div>
+    </div>
     <div class="top fix" style="display:none">
         <div class="col-md-1 pull-left logo">
             <img src="../images/logo/3.png" alt="">
@@ -535,6 +726,18 @@
             <span>登录</span>
             <span>注册</span>
         </div>
+    </div>
+    <div class="footer">
+        <p class="text-center">@谢志新 版权所有</p>
+    </div>
+    <div class="fixedtool">
+        <ul class="list-unstyled " id="myScrollspy">
+            <li class="active"><a href="#section-one">分类信息</a> </li>
+            <li><a href="#section-two">生活研究所</a> </li>
+            <li><a href="#section-three">京西秒杀</a> </li>
+            <li> <a href="#section-four"> 热门推荐</a></li>
+            <li>顶部</li>
+        </ul>
     </div>
 </body>
 

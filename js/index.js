@@ -34,5 +34,15 @@ var intDiff = parseInt(60000); //初始倒计时秒数
                 $banner.show();
                 $slider_right.show();
             })
+            $cate_detail.mouseover(function(){
+                $cate_detail.show();
+                $banner.hide();
+                $slider_right.hide();
+            })
+            $cate_detail.mouseout(function(){
+                $cate_detail.hide();
+                $banner.show();
+                $slider_right.show();
+            })
             timer(intDiff)
         })
